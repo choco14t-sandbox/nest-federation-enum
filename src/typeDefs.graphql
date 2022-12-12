@@ -1,0 +1,33 @@
+extend schema
+  @link(
+    url: "https://specs.apollo.dev/federation/v2.0"
+    import: [
+      "@key"
+      "@shareable"
+      "@external"
+      "@override"
+      "@requires"
+      "@tag"
+      "@inaccessible"
+      "@extends"
+      "@provides"
+    ]
+  )
+schema {
+  query: Query
+}
+
+type Post {
+  id: ID!
+  title: String!
+  postType: PostType!
+}
+
+enum PostType {
+  PUBLIC
+  PRIVATE
+}
+
+type Query {
+  post(postType: PostType = PRIVATE): Post!
+}

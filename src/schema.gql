@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  id: ID!
+  postType: PostType!
+  title: String!
+}
+
+enum PostType {
+  PRIVATE
+  PUBLIC
+}
+
+type Query {
+  post(postType: PostType = PRIVATE): Post!
+}
